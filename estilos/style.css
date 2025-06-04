@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
 
-    /*  
-    Laranja: #F7985D
-    Azul:    #466DA3
-    Verde:   #73D350
+    /*  CORES: 
+    Laranja: #F7985D  //  Azul:    #466DA3 //  Verde:   #73D350    
     */
+
+
+        /*  CSS GERAL  */
 
     * {
         margin: 0px;
@@ -25,7 +26,7 @@
         background-color: #b2d4e4b0;
     }
 
-     h1 {
+    h1 {
         text-align: center;
         font-size: 3em;
     }
@@ -47,6 +48,9 @@
 
     h2, h3, h4 {
         margin: 15px;
+        font-size: 2em;
+        text-indent: 30px;
+        text-align: left;
     }
 
     main {
@@ -57,12 +61,80 @@
         text-indent: 20px;
     }
 
-    h2 {
-        font-size: 2em;
-        text-indent: 30px;
-    }
+    ul {
+            list-style-position: inside;
+        }
 
     footer {
         background-color: black;
         color: white;
     }
+
+
+    /*  Home  */
+
+    #map {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+
+
+    /*  Verden  */
+
+    #lua {
+        width: 30vw;
+    }
+
+    #section-verden {
+        border: 2px solid black;
+    }
+
+
+
+    /*  r-homens  */
+
+    #calendario {
+        border: 2px solid black;
+        display: flex;
+        flex-flow: row no wrap;
+        justify-content: space-between;            
+    }
+
+    #p-r-homens {
+        margin-bottom: 20px;
+    }
+
+
+
+    /*  r-anao  */
+
+    #conteiner {
+        display: flex;
+        width: 40vw;
+        flex-flow:  wrap;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    #p-r-anao {
+        padding: 10px;
+    }
+
+
+
+    /*  r-elfos  */
+
+    #p-r-elfos {
+        margin-bottom: 10px;
+    }
+
+
+
+    /*  dawratalhaya  */
+
+    #tribos {
+        list-style-position: inside;
+    }
+
+   
