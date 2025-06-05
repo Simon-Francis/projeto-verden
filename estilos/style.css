@@ -137,11 +137,21 @@
 
     /*  r-homens  */
 
-   
 
     #p-r-homens {
         margin-bottom: 20px;
     }
+    
+
+    @media screen and (max-width: 400px) {
+
+    #p-r-homens {
+        margin-bottom: 0px;
+    }
+
+    }
+
+    
 
 
 
@@ -159,6 +169,28 @@
         padding: 10px;
     }
 
+
+    @media screen and (max-width: 400px) {
+        #cabrabel > img {
+            width: 75vw;
+            height: 50vh;
+        }
+
+        #cabra > img {
+            width: 75vw;
+            height: 50vh;
+        }
+
+        #dubhain > img {
+            width: 80vw;
+            height: 50vh;
+        }
+
+        #conteiner {
+            width: 90vw;
+        }
+
+    }
 
 
     /*  r-elfos  */
