@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Verden</title>
     <link rel="stylesheet" href="estilos/style.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
 </head>
-<body>
+
+<body onresize="mudouTamanho()">
     <header>
-        <h1>Dawratalhaya: o mar de fogo, o caldeirão ardente.</h1>
-        <nav>
+        <h1>Verden</h1>
+
+        <i id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+
+        <nav id="itens">
             <a href="home.html">Home</a>
             <a href="verden.html">Verden</a>
             <a href="r-homens.html">As Religiões</a>
@@ -63,7 +70,27 @@
         <h3>Dúnnadair</h3>
         <p>Os <em>Dúnnadair</em> são um povo que migrou há muito tempo para as florestas de <strong>Warbach</strong>,onde dividem com as dríades do local. Essa aliança foi estabelecida graças ao sacrifício de uma druida matriarca daquele povo, que deu a vida para reviver o <em>Grande Carvalho</em>, o <strong>Lûthin'Daur</strong>, com quem se uniu para sempre. Esse casamento foi benéfico para as dríades e os <em>Dúnnadair</em>, pois o espírito mantinha as terras sempre férteis e os animais sempre viviam em abundância ali.</p>
     </main>
+    
+    <script>
+        function mudouTamanho () {
+            if (window.innerwidth >= 400) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
 
+        
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+
+    
     <footer>
         <p>Desenvolvido por <strong>Francis Simon</strong>.</p>
     </footer>
