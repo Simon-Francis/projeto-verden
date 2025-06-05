@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Verden</title>
     <link rel="stylesheet" href="estilos/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
 </head>
-<body>
+
+<body onresize="mudouTamanho()">
     <header>
         <h1>Verden</h1>
-        <nav>
+
+        <i id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+
+        <nav id="itens">
             <a href="home.html">Home</a>
             <a href="verden.html">Verden</a>
             <a href="r-homens.html">As Religiões</a>
@@ -35,6 +42,26 @@
             <img id="map" src="imagens/verden.jpeg" alt="">
     </main>
 
+    <script>
+        function mudouTamanho () {
+            if (window.innerwidth >= 400) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+        
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+
+    
     <footer>
         <p>Desenvolvido por <strong>Francis Simon</strong>.</p>
     </footer>

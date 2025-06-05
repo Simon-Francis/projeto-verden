@@ -31,6 +31,20 @@
         font-size: 3em;
     }
 
+    i#burguer {
+        background-color: #5e6875;
+        color: white;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    i#burguer:hover {
+        background-color: white;
+        color: black;
+    }
+
     header > nav > a {
         display: inline-block;
         color: white;
@@ -83,10 +97,13 @@
             font-size: 2em;
         }
 
-        header > nav a {
+        header > nav > a {
+            border: 2px solid black;
+            border-radius: none;
             display: block;
-            font-size: 1em;
-            width: 30vw;
+            font-size: 1.5em;
+            width: 100vw;
+            text-align: center;
         }
 
 
