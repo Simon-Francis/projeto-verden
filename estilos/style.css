@@ -78,6 +78,19 @@
         width: 100%;
     }
 
+    @media screen and (max-width: 400px) {
+        h1, h2 {
+            font-size: 2em;
+        }
+
+        header > nav a {
+            display: block;
+            font-size: 1em;
+            width: 30vw;
+        }
+
+
+    }
 
 
     /*  Verden  */
@@ -198,6 +211,13 @@
     #p-r-elfos {
         margin-bottom: 10px;
     }
+
+    @media screen and (max-width: 400px) {
+    #p-r-elfos {
+        margin-bottom: 0px;
+    }
+    }
+
 
 
 
