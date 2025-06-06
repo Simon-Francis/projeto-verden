@@ -17,11 +17,13 @@
     }
 
     body {
-        background-color: rgb(255, 255, 255);
+        width:100%;
+        background-color: rgb(228, 227, 227);
+        margin: auto;
     }
 
     header {
-        width: 100%;
+        width: 80%;
         margin: auto;
         background-color: #b2d4e4b0;
     }
@@ -31,19 +33,7 @@
         font-size: 3em;
     }
 
-    i#burguer {
-        background-color: #5e6875;
-        color: white;
-        text-align: center;
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    i#burguer:hover {
-        background-color: white;
-        color: black;
-    }
+    
 
     header > nav > a {
         display: inline-block;
@@ -68,16 +58,17 @@
     }
 
     main {
+        width: 80%;
         margin: auto;
         line-height: 30px;
         background-color: rgb(203, 231, 235);
-        padding: 20px;
+        padding: 0px;
         text-indent: 20px;
     }
 
     ul {
-            list-style-position: inside;
-        }
+        list-style-position: inside;
+    }
 
     footer {
         background-color: black;
@@ -93,18 +84,40 @@
     }
 
     @media screen and (max-width: 400px) {
+
+
+        header {
+            width: 100%;
+        }
+
         h1, h2 {
             font-size: 2em;
         }
 
         header > nav > a {
-            border: 2px solid black;
-            border-radius: none;
-            display: block;
-            font-size: 1.5em;
-            width: 100vw;
-            text-align: center;
-        }
+        border: 2px solid black;
+        border-radius: none;
+        display: block;
+        font-size: 1.5em;
+        width: 100vw;
+        text-align: center;
+    }
+
+    main 
+
+    i#burguer {
+        background-color: #5e6875;
+        color: white;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    i#burguer:hover {
+        background-color: white;
+        color: black;
+    }
 
 
     }
@@ -129,7 +142,7 @@
 
     @media screen and (max-width: 400px) {
         * {
-            padding:
+            padding:0px;
         }
 
         #calendario {
@@ -140,11 +153,12 @@
             margin: auto;
             line-height: 30px;
             background-color: rgb(203, 231, 235);
-            padding: 5px;
+            padding: 0px;
             text-indent: 20px;
         }
 
         h2 {
+            margin: 0px;
             text-indent: 0px;
             font-size: 1em;
         }
@@ -181,9 +195,6 @@
 
     }
 
-    
-
-
 
     /*  r-anao  */
 
@@ -201,6 +212,10 @@
 
 
     @media screen and (max-width: 400px) {
+
+        #p-r-anao {
+            padding: 0px;
+        }
         #cabrabel > img {
             width: 75vw;
             height: 50vh;
