@@ -92,7 +92,10 @@
 
     @media screen and (max-width: 400px) {
 
-
+        #itens {
+            display: none;
+        }  
+        
         header {
             width: 100%;
         }
@@ -150,9 +153,7 @@
     @media screen and (max-width: 400px) {
         
 
-        #itens {
-        display: none;
-        }   
+     
 
         #calendario {
             background-color: lightcoral;
