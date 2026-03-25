@@ -33,7 +33,7 @@ main #burguer {
     }
 
     i#burguer:hover {
-        background-color: white;
+        background-color: rgb(212, 38, 38);
         color: black;
         cursor: pointer;
     }
@@ -98,6 +98,8 @@ footer {
         font-size: 2em;
     }
 
+    
+
     header>nav>a {
         border: 2px solid black;
         border-radius: none;
@@ -141,10 +143,6 @@ footer {
 @media screen and (max-width: 400px) {
     * {
         padding: 0px;
-    }
-
-    #calendario {
-        background-color: lightcoral;
     }
 
     main {
@@ -237,4 +235,23 @@ footer {
 /* dawratalhaya */
 #tribos {
     list-style-position: inside;
+}
+
+/* Media Query exclusivo para o Calendário e a Imagem da Lua */
+@media screen and (max-width: 800px) {
+    #calendario {
+        display: flex;
+        flex-direction: column; /* Joga a imagem para baixo */
+        align-items: center;    /* Centraliza os itens */
+    }
+
+    #calendario > ul {
+        width: 100%;            /* O texto ocupa a largura toda */
+        padding-bottom: 20px;   /* Espaço antes da imagem */
+    }
+
+    #lua {
+        width: 100% !important; /* Força a imagem a ocupar a largura total */
+        height: auto !important; /* Garante que a proporção seja mantida (sem espremer) */
+    }
 }
