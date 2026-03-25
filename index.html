@@ -4,33 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Verden</title>
-
     <link rel="stylesheet" href="estilos/style.css" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
   </head>
-
   <body onresize="mudouTamanho()">
     <header>
       <h1>Sobre o mundo de Verden</h1>
-
-      <i id="burguer" class="material-symbols-outlined" onclick="clickMenu()"
+      <i id="burguer" class="material-symbols-outlined" onclick="bunda()"
         >menu</i
       >
-
       <nav id="itens">
-        <a href="index.html">Home</a>
-        <a href="verden.html">Verden</a>
-        <a href="r-homens.html">As Religiões</a>
-        <a href="r-anao.html">Anões</a>
+        <a href="home.html">Home</a> <a href="verden.html">Verden</a>
+        <a href="r-homens.html">As Religiões</a> <a href="r-anao.html">Anões</a>
         <a href="r-elfos.html">Elfos</a>
         <a href="dawratalhaya.html">Dawratalhaya</a>
       </nav>
     </header>
-
     <main>
       <h2>Introdução</h2>
       <p>
@@ -52,7 +44,6 @@
         de forma inteiramente fictícia à vontade do Mestre nos casos de
         necessidade para a construção da narrativa.
       </p>
-
       <h2>O mundo conhecido</h2>
       <p>
         O “mundo conhecido” é uma perspectiva proveniente de Königstal e se
@@ -66,32 +57,26 @@
         tentavam buscar elementos que legitimassem sua posição de poder nas
         ruínas e vestígios das extensões do antigo império.
       </p>
-
-      <img id="map" src="imagens/verden.jpeg" alt="mapa do mundo" />
+      <img id="map" src="imagens/verden.jpeg" alt="" />
     </main>
-
     <script>
-function clickMenu() {
-    const itens = document.getElementById("itens")
-
-    if (itens.style.display === "block") {
-        itens.style.display = "none"
-    } else {
-        itens.style.display = "block"
-    }
-}
-
-/* garante que sempre comece oculto no mobile */
-window.addEventListener("load", function() {
-    if (window.innerWidth <= 400) {
-        document.getElementById("itens").style.display = "none"
-    }
-})
-</script>
-</body>
-
+      function mudouTamanho() {
+        if (window.innerwidth >= 400) {
+          itens.style.display = "block";
+        } else {
+          itens.style.display = "none";
+        }
+      }
+      function bunda() {
+        if (itens.style.display == "block") {
+          itens.style.display = "none";
+        } else {
+          itens.style.display = "block";
+        }
+      }
+    </script>
     <footer>
       <p>Desenvolvido por <strong>Francis Simon</strong>.</p>
     </footer>
-  </>
+  </body>
 </html>
