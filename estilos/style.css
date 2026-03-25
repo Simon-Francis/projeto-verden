@@ -22,6 +22,20 @@ header {
     background-color: #b2d4e4b0;
 }
 
+main i#burguer {
+        background-color: #5e6875;
+        color: white;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    i#burguer:hover {
+        background-color: white;
+        color: black;
+    }
+
 h1 {
     text-align: center;
     font-size: 3em;
