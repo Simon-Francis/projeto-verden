@@ -45,27 +45,27 @@
 
     <script>
 function mudouTamanho() {
-    let itens = document.getElementById("itens")
+    const itens = document.getElementById("itens")
 
     if (window.innerWidth >= 400) {
-        itens.style.display = 'block'
+        itens.style.display = "block"
     } else {
-        itens.style.display = 'none'
+        itens.style.display = "none"
     }
 }
 
 function clickMenu() {
-    let itens = document.getElementById("itens")
+    const itens = document.getElementById("itens")
 
-    if (itens.style.display == 'block') {
-        itens.style.display = 'none'
+    if (itens.style.display === "block") {
+        itens.style.display = "none"
     } else {
-        itens.style.display = 'block'
+        itens.style.display = "block"
     }
 }
 
-/* executa automaticamente ao abrir cada página */
-window.addEventListener('DOMContentLoaded', mudouTamanho)
+/* roda automaticamente quando a página abre */
+mudouTamanho()
 </script>
 
     
