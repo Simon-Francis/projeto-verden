@@ -97,18 +97,27 @@
     @media screen and (max-width: 400px) {
 
         #itens {
-            display: none;
-        }  
+        display: none;
+    }
 
-        header {
-            width: 100%;
-        }
+    #burguer {
+        display: block;
+        background-color: #5e6875;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+    }
 
-        h1, h2 {
-            font-size: 2em;
-        }
+    header {
+        width: 100%;
+    }
 
-        header > nav > a {
+    h1, h2 {
+        font-size: 2em;
+    }
+
+    header > nav > a {
         border: 2px solid black;
         border-radius: 0;
         display: block;
@@ -117,23 +126,7 @@
         text-align: center;
     }
 
-    
-
-    i#burguer {
-        background-color: #5e6875;
-        color: white;
-        text-align: center;
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    i#burguer:hover {
-        background-color: white;
-        color: black;
-    }
-
-    }
+}
     
 
 
