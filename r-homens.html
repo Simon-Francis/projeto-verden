@@ -16,7 +16,7 @@
 
         <i id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
 
-        <nav id="itens">
+        <nav id="itens" aria-label="Menu Principal">
             <a href="home.html">Home</a>
             <a href="verden.html">Verden</a>
             <a href="r-homens.html">As Religiões</a>
@@ -79,7 +79,7 @@
     
     <script>
         function mudouTamanho () {
-            if (window.innerwidth >= 400) {
+            if (window.innerWidth >= 400) {
                 itens.style.display = 'block'
             } else {
                 itens.style.display = 'none'
