@@ -42,9 +42,7 @@ a:hover {
     transition: 0.5s;
 }
 
-h2,
-h3,
-h4 {
+h2,h3,h4 {
     margin: 15px;
     font-size: 2em;
     text-indent: 30px;
@@ -80,8 +78,7 @@ footer {
         width: 100%;
     }
 
-    h1,
-    h2 {
+    h1, h2 {
         font-size: 2em;
     }
 
