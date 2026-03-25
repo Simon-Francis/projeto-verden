@@ -1,182 +1,227 @@
-@charset "UTF-8"; /* CORES: Laranja: #F7985D // Azul: #466DA3 // Verde: #73D350 */ /* CSS GERAL */
+@charset "UTF-8";
+
+/* CORES: Laranja: #F7985D // Azul: #466DA3 // Verde: #73D350 */
+/* CSS GERAL */
 * {
-  margin: 0px;
-  padding: 0px;
-  font-size: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: justify;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
 }
+
 body {
-  width: 100%;
-  background-color: rgb(228, 227, 227);
-  margin: auto;
+    width: 100%;
+    background-color: rgb(228, 227, 227);
+    margin: auto;
 }
+
 header {
-  width: 80%;
-  margin: auto;
-  background-color: #b2d4e4b0;
+    width: 80%;
+    margin: auto;
+    background-color: #b2d4e4b0;
 }
+
 h1 {
-  text-align: center;
-  font-size: 3em;
+    text-align: center;
+    font-size: 3em;
 }
-header > nav > a {
-  display: inline-block;
-  color: white;
-  background-color: #5e6875;
-  border-radius: 5px;
-  font-size: 1.5em;
-  text-decoration: none;
+
+header>nav>a {
+    display: inline-block;
+    color: white;
+    background-color: #5e6875;
+    border-radius: 5px;
+    font-size: 1.5em;
+    text-decoration: none;
 }
+
 a:hover {
-  background-color: rgb(219, 31, 31);
-  color: black;
-  transition: 0.5s;
+    background-color: rgb(219, 31, 31);
+    color: black;
+    transition: 0.5s;
 }
+
 h2,
 h3,
 h4 {
-  margin: 15px;
-  font-size: 2em;
-  text-indent: 30px;
-  text-align: left;
-}
-main {
-  width: 80%;
-  margin: auto;
-  line-height: 30px;
-  background-color: rgb(203, 231, 235);
-  padding: 0px;
-  text-indent: 20px;
-}
-ul {
-  list-style-position: inside;
-}
-footer {
-  background-color: black;
-  color: white;
-} /* Home */
-#map {
-  margin-top: 10px;
-  width: 100%;
-}
-@media screen and (max-width: 400px) {
-  header {
-    width: 100%;
-  }
-  h1,
-  h2 {
+    margin: 15px;
     font-size: 2em;
-  }
-  header > nav > a {
-    border: 2px solid black;
-    border-radius: none;
-    display: block;
-    font-size: 1.5em;
-    width: 100vw;
-    text-align: center;
-  }
-  main i#burguer {
-    background-color: #5e6875;
-    color: white;
-    text-align: center;
-    display: block;
-    cursor: pointer;
-    padding: 10px;
-  }
-  i#burguer:hover {
-    background-color: white;
-    color: black;
-  }
-} /* Verden */
-#lua {
-  width: 30vw;
+    text-indent: 30px;
+    text-align: left;
 }
-#section-verden {
-  border: 2px solid black;
-}
-#calendario {
-  border: 2px solid black;
-  display: flex;
-  flex-flow: row no wrap;
-  justify-content: space-between;
-}
-@media screen and (max-width: 400px) {
-  * {
-    padding: 0px;
-  }
-  #calendario {
-    background-color: lightcoral;
-  }
-  main {
+
+main {
+    width: 80%;
     margin: auto;
     line-height: 30px;
     background-color: rgb(203, 231, 235);
     padding: 0px;
     text-indent: 20px;
-  }
-  h2 {
-    margin: 0px;
-    text-indent: 0px;
-    font-size: 1em;
-  }
-  #calendario > ul {
-    font-size: 0.8em;
-    text-indent: 5px;
-    line-height: 20px;
-    border: 5px;
-  }
-  li::marker {
-    content: "•";
-    margin-right: 0px;
-  }
-} /* r-homens */
+}
+
+ul {
+    list-style-position: inside;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+/* Home */
+#map {
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+    header {
+        width: 100%;
+    }
+
+    h1,
+    h2 {
+        font-size: 2em;
+    }
+
+    header>nav>a {
+        border: 2px solid black;
+        border-radius: none;
+        display: block;
+        font-size: 1.5em;
+        width: 100vw;
+        text-align: center;
+    }
+
+    main i#burguer {
+        background-color: #5e6875;
+        color: white;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    i#burguer:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+/* Verden */
+#lua {
+    width: 30vw;
+}
+
+#section-verden {
+    border: 2px solid black;
+}
+
+#calendario {
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row no wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 400px) {
+    * {
+        padding: 0px;
+    }
+
+    #calendario {
+        background-color: lightcoral;
+    }
+
+    main {
+        margin: auto;
+        line-height: 30px;
+        background-color: rgb(203, 231, 235);
+        padding: 0px;
+        text-indent: 20px;
+    }
+
+    h2 {
+        margin: 0px;
+        text-indent: 0px;
+        font-size: 1em;
+    }
+
+    #calendario>ul {
+        font-size: 0.8em;
+        text-indent: 5px;
+        line-height: 20px;
+        border: 5px;
+    }
+
+    li::marker {
+        content: "•";
+        margin-right: 0px;
+    }
+}
+
+/* r-homens */
 #p-r-homens {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 @media screen and (max-width: 400px) {
-  #p-r-homens {
-    margin-bottom: 0px;
-  }
-} /* r-anao */
+    #p-r-homens {
+        margin-bottom: 0px;
+    }
+}
+
+/* r-anao */
 #conteiner {
-  display: flex;
-  width: 40vw;
-  flex-flow: wrap;
-  justify-content: flex-start;
-  margin-top: 10px;
+    display: flex;
+    width: 40vw;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    margin-top: 10px;
 }
+
 #p-r-anao {
-  padding: 10px;
+    padding: 10px;
 }
+
 @media screen and (max-width: 400px) {
-  #p-r-anao {
-    padding: 0px;
-  }
-  #cabrabel > img {
-    width: 75vw;
-    height: 50vh;
-  }
-  #cabra > img {
-    width: 75vw;
-    height: 50vh;
-  }
-  #dubhain > img {
-    width: 80vw;
-    height: 50vh;
-  }
-  #conteiner {
-    width: 90vw;
-  }
-} /* r-elfos */
+    #p-r-anao {
+        padding: 0px;
+    }
+
+    #cabrabel>img {
+        width: 75vw;
+        height: 50vh;
+    }
+
+    #cabra>img {
+        width: 75vw;
+        height: 50vh;
+    }
+
+    #dubhain>img {
+        width: 80vw;
+        height: 50vh;
+    }
+
+    #conteiner {
+        width: 90vw;
+    }
+}
+
+/* r-elfos */
 #p-r-elfos {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 @media screen and (max-width: 400px) {
-  #p-r-elfos {
-    margin-bottom: 0px;
-  }
-} /* dawratalhaya */
+    #p-r-elfos {
+        margin-bottom: 0px;
+    }
+}
+
+/* dawratalhaya */
 #tribos {
-  list-style-position: inside;
+    list-style-position: inside;
 }
