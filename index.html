@@ -71,16 +71,23 @@
     </main>
 
     <script>
-      function clickMenu() {
-        const itens = document.getElementById("itens");
+function clickMenu() {
+    const itens = document.getElementById("itens")
 
-        if (itens.style.display === "block") {
-          itens.style.display = "none";
-        } else {
-          itens.style.display = "block";
-        }
-      }
-    </script>
+    if (itens.style.display === "block") {
+        itens.style.display = "none"
+    } else {
+        itens.style.display = "block"
+    }
+}
+
+/* garante que sempre comece oculto no mobile */
+window.addEventListener("load", function() {
+    if (window.innerWidth <= 400) {
+        document.getElementById("itens").style.display = "none"
+    }
+})
+</script>
 
     <footer>
       <p>Desenvolvido por <strong>Francis Simon</strong>.</p>
