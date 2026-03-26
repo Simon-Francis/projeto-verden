@@ -24,7 +24,7 @@
 /* IMPORTANTE: Para o vídeo aparecer, remova ou diminua a opacidade 
    das cores de fundo do header e do main */
 header, main {
-    background-color: rgba(203, 231, 235, 0.7); /* Cor com 70% de transparência */
+    background-color: rgba(203, 231, 235, 0.5); /* Cor com 70% de transparência */
 }
 
 body {
@@ -35,7 +35,7 @@ body {
 header {
     width: 80%;
     margin: 20px auto 0px auto; /* Alinhado com o main */
-    background-color: rgba(178, 212, 228, 0.7); /* Mesma lógica de transparência */
+    background-color: rgba(178, 212, 228, 0.5); /* Mesma lógica de transparência */
     border-radius: 10px 10px 0 0; /* Arredonda só em cima */
     padding: 15px 0;
 }
@@ -51,7 +51,7 @@ main #burguer {
     }
 
     i#burguer:hover {
-        background-color: rgb(212, 38, 38);
+        background-color: rgb(38, 108, 212);
         color: black;
         cursor: pointer;
     }
@@ -71,7 +71,7 @@ header>nav>a {
 }
 
 a:hover {
-    background-color: rgb(219, 31, 31);
+    background-color: rgb(31, 106, 219);
     color: black;
     transition: 0.5s;
 }
@@ -91,7 +91,7 @@ main {
     font-weight: bold;
     line-height: 1.6; /* Aumenta o espaçamento entre linhas (melhora a leitura) */
     padding: 30px;    /* Espaço interno para o texto não encostar nas bordas do bloco azul */
-    border-radius: 10px; /* Arredonda os cantos para um visual moderno */
+    border-radius: 0px; /* Arredonda os cantos para um visual moderno */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Uma sombra leve para destacar o bloco do vídeo */
 }
 
@@ -118,8 +118,6 @@ footer {
     h1, h2 {
         font-size: 2em;
     }
-
-    
 
     header>nav>a {
         border: 2px solid black;
@@ -183,7 +181,7 @@ footer {
         width: 90%; /* Ocupa quase toda a largura no celular */
         margin: 10px auto;
         padding: 15px;
-        background-color: rgba(203, 231, 235, 0.6); /* Mantém a transparência */
+        background-color: rgba(203, 231, 235, 0.5); /* Mantém a transparência */
         font-size: 0.9em; /* Diminui um pouco a fonte para caber melhor */
     }
 
@@ -201,7 +199,7 @@ footer {
 
     h2 {
         margin: 0px;
-        text-indent: 0px;
+        text-indent: 10px;
         font-size: 1em;
     }
 
