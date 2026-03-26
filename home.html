@@ -62,20 +62,26 @@
   </main>
 
   <script>
-    function mudouTamanho() {
-      if (window.innerWidth >= 400) {
-        itens.style.display = "block";
-      } else {
-        itens.style.display = "none";
-      }
-    }
     function clickMenu() {
-      if (itens.style.display == "block") {
-        itens.style.display = "none";
-      } else {
-        itens.style.display = "block";
-      }
+    let menu = document.getElementById('itens');
+
+    if (menu.style.display == 'none') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
     }
+}
+
+function mudouTamanho() {
+    let menu = document.getElementById('itens');
+    
+    if (window.innerWidth >= 400) {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+    
   </script>
 
   <footer>
