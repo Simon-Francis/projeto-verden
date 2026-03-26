@@ -5,9 +5,27 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-size: 1em;
+    font-size: 1.1em;
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Joga o vídeo para trás de tudo */
+    object-fit: cover; /* Garante que o vídeo cubra a tela sem esticar */
+}
+
+/* IMPORTANTE: Para o vídeo aparecer, remova ou diminua a opacidade 
+   das cores de fundo do header e do main */
+header, main {
+    background-color: rgba(203, 231, 235, 0.7); /* Cor com 70% de transparência */
 }
 
 body {
@@ -66,10 +84,12 @@ h2,h3,h4 {
 }
 
 main {
+    color: rgb(44, 34, 34);
+    font-weight: bold;
     width: 80%;
     margin: auto;
     line-height: 30px;
-    background-color: rgb(203, 231, 235);
+    background-color: rgba(203, 231, 235, 0.5);
     padding: 0px;
     text-indent: 20px;
 }
