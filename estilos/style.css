@@ -1,16 +1,14 @@
 @charset "UTF-8";
 
-/* CORES: Laranja: #F7985D // Azul: #466DA3 // Verde: #73D350 */
-/* CSS GERAL */
+/* 1. CONFIGURAÇÕES GERAIS */
 * {
     margin: 0px;
     padding: 0px;
-    font-size: 1.1em;
+    box-sizing: border-box; /* Impede que o padding "empurre" elementos para fora da tela */
     font-family: Arial, Helvetica, sans-serif;
-    text-align: justify;
 }
 
-/* Ajuste para o GIF de Fundo */
+/* Fundo com GIF - Camada fixa atrás de tudo */
 #bg-gif {
     position: fixed;
     top: 0;
@@ -18,280 +16,191 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* Certifique-se de que o nome do arquivo está correto */
     background: url('../imagens/ygdrasil.gif') no-repeat center center fixed;
     background-size: cover;
-    filter: brightness(50%); /* Escurece o GIF para o texto branco se destacar */
+    filter: brightness(50%);
 }
 
-
+/* Regra de Ouro para Imagens: Elas nunca ficam maiores que a tela */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
 
 body {
     width: 100%;
-    margin: auto;
+    min-height: 100vh;
 }
 
+/* 2. CABEÇALHO E NAVEGAÇÃO (MODO PC > 600px) */
 header {
-    color: rgb(165, 163, 163);
+    color: white;
     width: 80%;
-    margin: 20px auto 0px auto; /* Alinhado com o main */
-    border-radius: 10px 10px 0 0; /* Arredonda só em cima */
-    padding: 15px 0;
+    margin: 20px auto 0px auto;
+    text-align: center;
 }
-
-main #burguer {
-        color: white;
-        text-align: center;
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    i#burguer:hover {
-        background-color: rgb(38, 108, 212);
-        color: black;
-        cursor: pointer;
-    }
 
 h1 {
-    text-align: center;
     font-size: 3em;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-header>nav>a {
-    display: inline;
+/* Esconde o burguer no PC */
+#burguer {
+    display: none; 
+}
+
+/* Menu de Itens - Visível no PC */
+#itens {
+    display: block; 
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px 10px 0 0;
+}
+
+header > nav > a {
+    display: inline-block;
     color: white;
-    border-radius: 5px;
-    font-size: 1.5em;
+    padding: 15px 20px;
+    font-size: 1.2em;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-a:hover {
-    background-color: rgb(31, 106, 219);
-    color: black;
-    transition: 0.5s;
+header > nav > a:hover {
+    background-color: #466DA3; /* Azul da sua paleta */
+    color: white;
 }
 
-h2,h3,h4 {
-    margin: 15px;
-    font-size: 2em;
-    text-indent: 30px;
-    text-align: left;
-}
-
+/* 3. CONTEÚDO PRINCIPAL (MODO PC) */
 main {
     width: 80%;
-    margin: 20px auto; /* Adicionei 20px de margem no topo e rodapé */
-    color: rgb(255, 255, 255); /* Um cinza quase preto para melhor leitura */
-    font-weight: bold;
-    line-height: 1.6; /* Aumenta o espaçamento entre linhas (melhora a leitura) */
-    padding: 30px;    /* Espaço interno para o texto não encostar nas bordas do bloco azul */
-    border-radius: 0px; /* Arredonda os cantos para um visual moderno */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Uma sombra leve para destacar o bloco do vídeo */
-}
-
-ul {
-    list-style-position: inside;
-}
-
-footer {
-    background-color: black;
+    margin: 0px auto 20px auto;
     color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    line-height: 1.8;
+    text-align: justify;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Home */
-#map {
-    margin-top: 10px;
-    width: 100%;
+h2, h3, h4 {
+    margin: 20px 0;
+    text-align: left;
+    color: #F7985D; /* Laranja para destacar títulos */
 }
 
-@media screen and (max-width: 400px) {
-    header {
-        width: 100%;
-    }
-
-    h1, h2 {
-        font-size: 2em;
-    }
-
-    header>nav>a {
-        border: 2px solid black;
-        border-radius: none;
-        display: block;
-        font-size: 1.5em;
-        width: 100vw;
-        text-align: center;
-    }
-
-    main i#burguer {
-        background-color: #5e6875;
-        color: white;
-        text-align: center;
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    i#burguer:hover {
-        background-color: white;
-        color: black;
-    }
+p {
+    margin-bottom: 15px;
+    text-indent: 30px;
 }
 
-/* Verden */
-#lua {
-    width: 30vw;
-}
-
-#section-verden {
-    border: 2px solid black;
-}
-
-#calendario {
-    border: 2px solid black;
-    display: flex;
-    flex-flow: row no wrap;
-    justify-content: space-between;
-}
-
-@media screen and (max-width: 400px) {
-    * {
-        padding: 0px;
-        font-size: 1em;
-    }
-
-    #bg-video {
-        /* Garante que o vídeo preencha a altura total do celular */
-        width: 100vw; 
-        height: 100vh;
-        object-fit: cover;
-        object-position: center; /* Centraliza o conteúdo do vídeo */
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-    /* Ajuste do conteúdo para não "sufocar" o vídeo */
-
-    main {
-        width: 90%; /* Ocupa quase toda a largura no celular */
-        margin: 10px auto;
-        padding: 15px;
-        background-color: rgba(203, 231, 235, 0.5); /* Mantém a transparência */
-        font-size: 0.9em; /* Diminui um pouco a fonte para caber melhor */
-    }
-
-    header {
-        width: 90%;
-        margin: auto;
-    }
-
-    main {
-        margin: auto;
-        line-height: 30px;
-        padding: 0px;
-        text-indent: 20px;
-    }
-
-    h2 {
-        margin: 0px;
-        text-indent: 10px;
-        font-size: 1em;
-    }
-
-    #calendario>ul {
-        font-size: 0.8em;
-        text-indent: 5px;
-        line-height: 20px;
-        border: 5px;
-    }
-
-    li::marker {
-        content: "•";
-        margin-right: 0px;
-    }
-}
-
-/* r-homens */
-#p-r-homens {
+ul.lista {
+    list-style-position: inside;
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 400px) {
-    #p-r-homens {
-        margin-bottom: 0px;
-    }
-}
-
-/* r-anao */
-#conteiner {
+/* 4. SEÇÃO DO CALENDÁRIO (PÁGINA VERDEN) */
+#calendario {
     display: flex;
-    width: 40vw;
-    flex-flow: wrap;
-    justify-content: flex-start;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-top: 30px;
 }
 
-#p-r-anao {
-    padding: 10px;
+#calendario ul {
+    flex: 1;
+    min-width: 280px;
+    list-style: none;
 }
 
-@media screen and (max-width: 400px) {
-    #p-r-anao {
-        padding: 0px;
-    }
-
-    #cabrabel>img {
-        width: 75vw;
-        height: 50vh;
-    }
-
-    #cabra>img {
-        width: 75vw;
-        height: 50vh;
-    }
-
-    #dubhain>img {
-        width: 80vw;
-        height: 50vh;
-    }
-
-    #conteiner {
-        width: 90vw;
-    }
+#lua {
+    width: 350px; /* Aumentei de 200px para 350px no PC */
+    max-width: 100%; /* Garante que ela nunca ultrapasse a largura do main */
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4); /* Brilho mais intenso */
+    transition: transform 0.3s ease; /* Efeito suave se quiser interagir depois */
 }
 
-/* r-elfos */
-#p-r-elfos {
-    margin-bottom: 10px;
-}
-
-@media screen and (max-width: 400px) {
-    #p-r-elfos {
-        margin-bottom: 0px;
-    }
-}
-
-/* dawratalhaya */
-#tribos {
-    list-style-position: inside;
-}
-
-/* Media Query exclusivo para o Calendário e a Imagem da Lua */
-@media screen and (max-width: 800px) {
-    #calendario {
-        display: flex;
-        flex-direction: column; /* Joga a imagem para baixo */
-        align-items: center;    /* Centraliza os itens */
+/* 5. MEDIA QUERY: TELAS ATÉ 600px (CELULAR) */
+@media screen and (max-width: 600px) {
+    
+    header, main {
+        width: 95%; /* Ocupa quase a tela toda no mobile */
     }
 
-    #calendario > ul {
-        width: 100%;            /* O texto ocupa a largura toda */
-        padding-bottom: 20px;   /* Espaço antes da imagem */
+    h1 {
+        font-size: 1.8em;
     }
 
+    /* EXIBE O HAMBURGUER */
+    #burguer {
+        display: block;
+        color: white;
+        font-size: 40px;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    /* ESCONDE O MENU POR PADRÃO */
+    #itens {
+        display: none; 
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro no mobile */
+        border-radius: 0;
+    }
+
+    header > nav > a {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 15px;
+        text-align: center;
+    }
+
+    main {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    p {
+        text-indent: 15px;
+    }
+
+    #bg-gif {
+        filter: brightness(40%) blur(2px);
+    }
+
+    /* Ajuste do Calendário para Celular */
+    @media screen and (max-width: 600px) {
     #lua {
-        width: 100% !important; /* Força a imagem a ocupar a largura total */
-        height: auto !important; /* Garante que a proporção seja mantida (sem espremer) */
+        width: 80%; /* No celular, ela ocupará 80% da largura da tela */
+        margin: 20px auto; /* Garante que fique bem centralizada */
     }
+    
+    #calendario {
+        flex-direction: column; /* Mantém a Lua abaixo do texto no celular */
+    }
+}
+
+    #map {
+        width: 100% !important;
+        margin: 10px 0;
+    }
+}
+
+/* 6. RODAPÉ */
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
