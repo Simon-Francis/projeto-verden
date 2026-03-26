@@ -164,12 +164,37 @@ footer {
 @media screen and (max-width: 400px) {
     * {
         padding: 0px;
+        font-size: 1em;
+    }
+
+    #bg-video {
+        /* Garante que o vídeo preencha a altura total do celular */
+        width: 100vw; 
+        height: 100vh;
+        object-fit: cover;
+        object-position: center; /* Centraliza o conteúdo do vídeo */
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    /* Ajuste do conteúdo para não "sufocar" o vídeo */
+
+    main {
+        width: 90%; /* Ocupa quase toda a largura no celular */
+        margin: 10px auto;
+        padding: 15px;
+        background-color: rgba(203, 231, 235, 0.6); /* Mantém a transparência */
+        font-size: 0.9em; /* Diminui um pouco a fonte para caber melhor */
+    }
+
+    header {
+        width: 90%;
+        margin: auto;
     }
 
     main {
         margin: auto;
         line-height: 30px;
-        background-color: rgb(203, 231, 235);
         padding: 0px;
         text-indent: 20px;
     }
