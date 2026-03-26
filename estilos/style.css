@@ -10,19 +10,21 @@
     text-align: justify;
 }
 
-#bg-video {
+/* Ajuste para o GIF de Fundo */
+#bg-gif {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    object-fit: cover;
-    filter: brightness(60%); /* Escurece o vídeo em 40% para o texto saltar aos olhos */
+    /* Certifique-se de que o nome do arquivo está correto */
+    background: url('../imagens/ygdrasil.gif') no-repeat center center fixed;
+    background-size: cover;
+    filter: brightness(50%); /* Escurece o GIF para o texto branco se destacar */
 }
 
-/* IMPORTANTE: Para o vídeo aparecer, remova ou diminua a opacidade 
-   das cores de fundo do header e do main */
+
 
 body {
     width: 100%;
