@@ -23,9 +23,6 @@
 
 /* IMPORTANTE: Para o vídeo aparecer, remova ou diminua a opacidade 
    das cores de fundo do header e do main */
-header, main {
-    background-color: rgba(203, 231, 235, 0.5); /* Cor com 70% de transparência */
-}
 
 body {
     width: 100%;
@@ -33,15 +30,14 @@ body {
 }
 
 header {
+    color: rgb(165, 163, 163);
     width: 80%;
     margin: 20px auto 0px auto; /* Alinhado com o main */
-    background-color: rgba(178, 212, 228, 0.5); /* Mesma lógica de transparência */
     border-radius: 10px 10px 0 0; /* Arredonda só em cima */
     padding: 15px 0;
 }
 
 main #burguer {
-        background-color: #5e6875;
         color: white;
         text-align: center;
         display: block;
@@ -62,9 +58,8 @@ h1 {
 }
 
 header>nav>a {
-    display: inline-block;
+    display: inline;
     color: white;
-    background-color: #5e6875;
     border-radius: 5px;
     font-size: 1.5em;
     text-decoration: none;
@@ -86,8 +81,7 @@ h2,h3,h4 {
 main {
     width: 80%;
     margin: 20px auto; /* Adicionei 20px de margem no topo e rodapé */
-    background-color: rgba(203, 231, 235, 0.6); /* 60% de opacidade é o "ponto doce" */
-    color: rgb(20, 20, 20); /* Um cinza quase preto para melhor leitura */
+    color: rgb(255, 255, 255); /* Um cinza quase preto para melhor leitura */
     font-weight: bold;
     line-height: 1.6; /* Aumenta o espaçamento entre linhas (melhora a leitura) */
     padding: 30px;    /* Espaço interno para o texto não encostar nas bordas do bloco azul */
