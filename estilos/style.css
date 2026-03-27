@@ -124,11 +124,15 @@ p {
     transform: translateY(-3px);
 }
 
+/* DIVISOR MELHORADO - Resolve o problema de embolar os personagens */
 .divisor {
+    clear: both; /* Limpa o layout flex/float anterior */
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, transparent, rgba(247, 152, 93, 0.5), transparent);
-    margin: 50px 0;
+    margin: 60px 0; /* Espaço maior para não embolar */
+    display: block;
+    width: 100%;
 }
 
 /* 4. LAYOUT FLEXÍVEL E FOTOS */
@@ -137,8 +141,9 @@ p {
     flex-direction: row; 
     align-items: flex-start;
     gap: 40px;
-    padding: 10px 0;
+    padding: 20px 0; /* Aumentado o padding vertical */
     scroll-margin-top: 30px; 
+    width: 100%;
 }
 
 .perfil-lateral {
@@ -152,7 +157,7 @@ p {
 
 /* Wrapper para textos sobre a foto */
 .wrapper-foto {
-    position: relative;
+    position: relative; /* Importante para o texto absoluto se basear aqui */
     width: 100%;
     margin-bottom: 15px;
     border-radius: 5px;
@@ -171,17 +176,17 @@ p {
     filter: grayscale(100%);
 }
 
-/* TEXTO CENTRALIZADO (IN MEMORIAM) */
+/* TEXTO CENTRALIZADO (IN MEMORIAM) - Corrigido para o centro */
 .texto-centro-foto {
     position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px 30px;
+    top: 50%; /* Centro vertical */
+    left: 50%; /* Centro horizontal */
+    transform: translate(-50%, -50%); /* Ajuste fino de centralização */
+    background-color: rgba(0, 0, 0, 0.7); /* Um pouco mais escuro para ler melhor */
+    padding: 15px 25px;
     text-align: center;
     border-radius: 5px;
-    border: 1px solid rgba(53, 46, 46, 0.4);
+    border: 1px solid rgba(255, 77, 77, 0.5); /* Borda avermelhada sutil */
     text-indent: 0 !important;
     width: auto;
     white-space: nowrap;
@@ -191,10 +196,10 @@ p {
 .texto-centro-foto h3 {
     margin: 0 !important;
     padding: 0;
-    font-size: 1.6em;
+    font-size: 1.5em;
     color: #ff4d4d;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     font-weight: bold;
 }
@@ -249,7 +254,6 @@ p {
 
 /* 6. RESPONSIVIDADE (MEDIA QUERIES) */
 
-/* Ajuste para TABLETS / LAPTOPS PEQUENOS (900px) */
 @media (max-width: 900px) {
     .container-flex {
         flex-direction: column; 
@@ -268,14 +272,9 @@ p {
 
     .texto-centro-foto h3 {
         font-size: 1.3em;
-        letter-spacing: 2px;
-    }
-    .texto-centro-foto {
-        padding: 15px 25px;
     }
 }
 
-/* Ajuste para CELULARES (800px e abaixo) */
 @media screen and (max-width: 800px) {
     header, main {
         width: 95%;
