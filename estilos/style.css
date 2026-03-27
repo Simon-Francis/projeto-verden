@@ -8,6 +8,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Rolagem suave quando clicar nos nomes dos personagens */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Fundo com GIF - Camada fixa atrás de tudo */
 #bg-gif {
     position: fixed;
@@ -26,7 +31,7 @@ body {
     min-height: 100vh;
 }
 
-/* 2. CABEÇALHO E NAVEGAÇÃO */
+/* 2. CABEÇALHO E NAVEGAÇÃO PRINCIPAL */
 header {
     color: white;
     width: 80%;
@@ -87,18 +92,60 @@ p {
     text-indent: 30px;
 }
 
+/* --- NOVO: MENU DE PERSONAGENS (ÂNCORAS) --- */
+.menu-personagens {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    border: 1px solid rgba(247, 152, 93, 0.2);
+}
+
+.menu-personagens p {
+    text-indent: 0;
+    font-weight: bold;
+    color: #F7985D;
+    margin-bottom: 10px;
+}
+
+.menu-personagens a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(70, 109, 163, 0.4);
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.menu-personagens a:hover {
+    background-color: #466DA3;
+    transform: translateY(-3px);
+}
+
+/* Divisor entre um personagem e outro */
+.divisor {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, rgba(247, 152, 93, 0.5), transparent);
+    margin: 50px 0;
+}
+
 /* 4. LAYOUT FLEXÍVEL (PERSONAGENS) */
 
-/* Container que coloca Lado a Lado no PC */
 .container-flex {
     display: flex;
     flex-direction: row; 
     align-items: flex-start;
     gap: 40px;
     padding: 10px 0;
+    /* Evita que o topo do personagem fique colado no navegador ao rolar */
+    scroll-margin-top: 30px; 
 }
 
-/* Bloco da Ficha (Foto + Dados) */
 .perfil-lateral {
     width: 350px;
     flex-shrink: 0;
@@ -117,7 +164,6 @@ p {
     box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
 }
 
-/* Lista de informações técnicas */
 .info-personagem {
     list-style: none;
     padding: 0;
@@ -129,11 +175,11 @@ p {
 .info-personagem li {
     padding: 6px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    text-indent: 0px; /* Remove o recuo de parágrafo aqui */
+    text-indent: 0px; 
 }
 
 .info-personagem li strong {
-    color: #F7985D; /* Mesmo laranja dos títulos */
+    color: #F7985D;
 }
 
 .conteudo-texto {
@@ -168,16 +214,16 @@ p {
 
 /* 6. RESPONSIVIDADE (MEDIA QUERIES) */
 
-/* Ajuste para TELAS ATÉ 900px (Tablets e Laptops pequenos) */
+/* Ajuste para TELAS ATÉ 900px */
 @media (max-width: 900px) {
     .container-flex {
-        flex-direction: column; /* Empilha: Foto em cima, texto embaixo */
+        flex-direction: column; 
         align-items: center;
     }
 
     .perfil-lateral {
         width: 100%;
-        max-width: 450px; /* Não deixa a foto ficar gigante */
+        max-width: 450px; 
         margin-bottom: 30px;
     }
 
@@ -206,7 +252,7 @@ p {
     }
 
     #itens {
-        display: none; /* Menu escondido (burguer) */
+        display: none; 
         background-color: rgba(0, 0, 0, 0.9);
         border-radius: 0;
     }
