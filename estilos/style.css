@@ -4,7 +4,8 @@
 * {
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box; /* Impede que o padding "empurre" elementos para fora da tela */
+    box-sizing: border-box;
+    /* Impede que o padding "empurre" elementos para fora da tela */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -45,22 +46,22 @@ header {
 h1 {
     font-size: 3em;
     padding: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Esconde o burguer no PC */
 #burguer {
-    display: none; 
+    display: none;
 }
 
 /* Menu de Itens - Visível no PC */
 #itens {
-    display: block; 
+    display: block;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px 10px 0 0;
 }
 
-header > nav > a {
+header>nav>a {
     display: inline-block;
     color: white;
     padding: 15px 20px;
@@ -69,8 +70,9 @@ header > nav > a {
     transition: 0.3s;
 }
 
-header > nav > a:hover {
-    background-color: #466DA3; /* Azul da sua paleta */
+header>nav>a:hover {
+    background-color: #466DA3;
+    /* Azul da sua paleta */
     color: white;
 }
 
@@ -86,10 +88,13 @@ main {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     margin: 20px 0;
     text-align: left;
-    color: #F7985D; /* Laranja para destacar títulos */
+    color: #F7985D;
+    /* Laranja para destacar títulos */
 }
 
 p {
@@ -122,18 +127,44 @@ ul.lista {
 }
 
 #lua {
-    width: 350px; /* Aumentei de 200px para 350px no PC */
-    max-width: 100%; /* Garante que ela nunca ultrapasse a largura do main */
+    width: 350px;
+    /* Aumentei de 200px para 350px no PC */
+    max-width: 100%;
+    /* Garante que ela nunca ultrapasse a largura do main */
     border-radius: 50%;
-    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4); /* Brilho mais intenso */
-    transition: transform 0.3s ease; /* Efeito suave se quiser interagir depois */
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4);
+    /* Brilho mais intenso */
+    transition: transform 0.3s ease;
+    /* Efeito suave se quiser interagir depois */
 }
+
+.container-flex {
+    display: flex;
+    align-items: flex-start; /* Alinha o texto pelo topo da imagem */
+    gap: 30px;               /* Espaçamento entre foto e texto */
+    padding: 20px;
+}
+
+.foto-personagem {
+    width: 350px;            /* Ajuste o tamanho da foto como desejar */
+    height: auto;
+    flex-shrink: 0;          /* Não deixa a imagem esmagar se o texto for grande */
+    border-radius: 10px;
+}
+
+.conteudo-texto {
+    flex: 1;                 /* Faz o texto ocupar o resto da largura */
+}
+
+
 
 /* 5. MEDIA QUERY: TELAS ATÉ 600px (CELULAR) */
 @media screen and (max-width: 600px) {
-    
-    header, main {
-        width: 95%; /* Ocupa quase a tela toda no mobile */
+
+    header,
+    main {
+        width: 95%;
+        /* Ocupa quase a tela toda no mobile */
     }
 
     h1 {
@@ -152,15 +183,16 @@ ul.lista {
 
     /* ESCONDE O MENU POR PADRÃO */
     #itens {
-        display: none; 
-        background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro no mobile */
+        display: none;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Fundo mais escuro no mobile */
         border-radius: 0;
     }
 
-    header > nav > a {
+    header>nav>a {
         display: block;
         width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 15px;
         text-align: center;
     }
@@ -180,15 +212,18 @@ ul.lista {
 
     /* Ajuste do Calendário para Celular */
     @media screen and (max-width: 600px) {
-    #lua {
-        width: 80%; /* No celular, ela ocupará 80% da largura da tela */
-        margin: 20px auto; /* Garante que fique bem centralizada */
+        #lua {
+            width: 80%;
+            /* No celular, ela ocupará 80% da largura da tela */
+            margin: 20px auto;
+            /* Garante que fique bem centralizada */
+        }
+
+        #calendario {
+            flex-direction: column;
+            /* Mantém a Lua abaixo do texto no celular */
+        }
     }
-    
-    #calendario {
-        flex-direction: column; /* Mantém a Lua abaixo do texto no celular */
-    }
-}
 
     #map {
         width: 100% !important;
