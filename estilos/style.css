@@ -5,7 +5,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    /* Impede que o padding "empurre" elementos para fora da tela */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -22,20 +21,12 @@
     filter: brightness(50%);
 }
 
-/* Regra de Ouro para Imagens: Elas nunca ficam maiores que a tela */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-
 body {
     width: 100%;
     min-height: 100vh;
 }
 
-/* 2. CABEÇALHO E NAVEGAÇÃO (MODO PC > 600px) */
+/* 2. CABEÇALHO E NAVEGAÇÃO */
 header {
     color: white;
     width: 80%;
@@ -49,12 +40,10 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Esconde o burguer no PC */
 #burguer {
     display: none;
 }
 
-/* Menu de Itens - Visível no PC */
 #itens {
     display: block;
     background-color: rgba(0, 0, 0, 0.4);
@@ -72,11 +61,10 @@ header>nav>a {
 
 header>nav>a:hover {
     background-color: #466DA3;
-    /* Azul da sua paleta */
     color: white;
 }
 
-/* 3. CONTEÚDO PRINCIPAL (MODO PC) */
+/* 3. CONTEÚDO PRINCIPAL (MAIN) */
 main {
     width: 80%;
     margin: 0px auto 20px auto;
@@ -88,13 +76,10 @@ main {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-h2,
-h3,
-h4 {
+h2, h3, h4 {
     margin: 20px 0;
     text-align: left;
-    color: #F7985D;
-    /* Laranja para destacar títulos */
+    color: #F7985D; /* Laranja de destaque */
 }
 
 p {
@@ -102,12 +87,60 @@ p {
     text-indent: 30px;
 }
 
-ul.lista {
-    list-style-position: inside;
-    margin-bottom: 20px;
+/* 4. LAYOUT FLEXÍVEL (PERSONAGENS) */
+
+/* Container que coloca Lado a Lado no PC */
+.container-flex {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    gap: 40px;
+    padding: 10px 0;
 }
 
-/* 4. SEÇÃO DO CALENDÁRIO (PÁGINA VERDEN) */
+/* Bloco da Ficha (Foto + Dados) */
+.perfil-lateral {
+    width: 350px;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(247, 152, 93, 0.3);
+}
+
+.foto-personagem {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+}
+
+/* Lista de informações técnicas */
+.info-personagem {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+.info-personagem li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-indent: 0px; /* Remove o recuo de parágrafo aqui */
+}
+
+.info-personagem li strong {
+    color: #F7985D; /* Mesmo laranja dos títulos */
+}
+
+.conteudo-texto {
+    flex: 1;
+}
+
+/* 5. SEÇÃO DO CALENDÁRIO E MAPAS */
 #calendario {
     display: flex;
     flex-wrap: wrap;
@@ -128,51 +161,41 @@ ul.lista {
 
 #lua {
     width: 350px;
-    /* Aumentei de 200px para 350px no PC */
     max-width: 100%;
-    /* Garante que ela nunca ultrapasse a largura do main */
     border-radius: 50%;
     box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4);
-    /* Brilho mais intenso */
-    transition: transform 0.3s ease;
-    /* Efeito suave se quiser interagir depois */
 }
 
-.container-flex {
-        display: flex;
-        flex-direction: row;      /* Lado a lado */
-        align-items: flex-start;
-        gap: 40px;                /* Um pouco mais de espaço fica melhor em telas grandes */
-        padding: 20px;
+/* 6. RESPONSIVIDADE (MEDIA QUERIES) */
+
+/* Ajuste para TELAS ATÉ 900px (Tablets e Laptops pequenos) */
+@media (max-width: 900px) {
+    .container-flex {
+        flex-direction: column; /* Empilha: Foto em cima, texto embaixo */
+        align-items: center;
     }
 
-    .foto-personagem {
-        width: 350px;             /* Tamanho fixo da foto no PC */
-        flex-shrink: 0;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    .perfil-lateral {
+        width: 100%;
+        max-width: 450px; /* Não deixa a foto ficar gigante */
+        margin-bottom: 30px;
     }
 
-    .conteudo-texto {
-        flex: 1;
+    header, main {
+        width: 90%;
     }
+}
 
-
-
-/* 5. MEDIA QUERY: TELAS ATÉ 600px (CELULAR) */
+/* Ajuste para TELAS ATÉ 600px (Celulares) */
 @media screen and (max-width: 600px) {
-
-    header,
-    main {
+    header, main {
         width: 95%;
-        /* Ocupa quase a tela toda no mobile */
     }
 
     h1 {
         font-size: 1.8em;
     }
 
-    /* EXIBE O HAMBURGUER */
     #burguer {
         display: block;
         color: white;
@@ -182,11 +205,9 @@ ul.lista {
         text-align: center;
     }
 
-    /* ESCONDE O MENU POR PADRÃO */
     #itens {
-        display: none;
-        background-color: rgba(0, 0, 0, 0.8);
-        /* Fundo mais escuro no mobile */
+        display: none; /* Menu escondido (burguer) */
+        background-color: rgba(0, 0, 0, 0.9);
         border-radius: 0;
     }
 
@@ -194,98 +215,24 @@ ul.lista {
         display: block;
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 15px;
         text-align: center;
-    }
-
-    main {
-        padding: 20px;
-        font-size: 1em;
     }
 
     p {
         text-indent: 15px;
     }
 
-    #bg-gif {
-        filter: brightness(40%) blur(2px);
+    #calendario {
+        flex-direction: column;
     }
 
-    /* Ajuste do Calendário para Celular */
-    @media screen and (max-width: 600px) {
-        #lua {
-            width: 80%;
-            /* No celular, ela ocupará 80% da largura da tela */
-            margin: 20px auto;
-            /* Garante que fique bem centralizada */
-        }
-
-        #calendario {
-            flex-direction: column;
-            /* Mantém a Lua abaixo do texto no celular */
-        }
-    }
-
-    #map {
-        width: 100% !important;
-        margin: 10px 0;
+    #lua {
+        width: 80%;
+        margin: 20px auto;
     }
 }
 
-
-/* --- CONFIGURAÇÃO PARA TELAS GRANDES (Acima de 900px) --- */
-/* Só fica lado a lado em monitores maiores */
-@media (min-width: 901px) {
-    .container-flex {
-        display: flex;
-        flex-direction: row;      /* Lado a lado */
-        align-items: flex-start;
-        gap: 40px;                /* Um pouco mais de espaço fica melhor em telas grandes */
-        padding: 20px;
-    }
-
-    .foto-personagem {
-        width: 350px;             /* Tamanho fixo da foto no PC */
-        flex-shrink: 0;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .conteudo-texto {
-        flex: 1;
-    }
-}
-
-/* --- CONFIGURAÇÃO PARA TELAS ATÉ 900px (Celulares, Tablets e Laptops Pequenos) --- */
-/* Aqui a foto fica em cima e o texto embaixo */
-@media (max-width: 900px) {
-    .container-flex {
-        display: flex;
-        flex-direction: column;   /* Empilha os elementos */
-        align-items: center;      /* Centraliza a imagem horizontalmente */
-        padding: 15px;
-    }
-
-    .foto-personagem {
-        width: 100%;              /* Foto cresce até o limite do container */
-        max-width: 500px;         /* Mas não deixa ficar gigante em tablets */
-        height: auto;
-        margin-bottom: 25px;      /* Espaço entre a foto e o início do texto */
-        border-radius: 10px;
-    }
-
-    .conteudo-texto {
-        width: 100%;
-        text-align: justify;      /* Opcional: deixa o texto alinhado nas laterais */
-    }
-    
-    /* Pequeno ajuste nos parágrafos para não colarem na borda da tela */
-    .conteudo-texto p {
-        margin-bottom: 15px;
-    }
-}
-
-/* 6. RODAPÉ */
+/* 7. RODAPÉ */
 footer {
     width: 100%;
     background-color: black;
