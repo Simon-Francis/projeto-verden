@@ -232,8 +232,8 @@ p {
     }
 }
 
-/* Ajuste para TELAS ATÉ 600px (Celulares) */
-@media screen and (max-width: 600px) {
+/* Ajuste para TELAS ATÉ 800px (Celulares) */
+@media screen and (max-width: 800px) {
     header, main {
         width: 95%;
     }
