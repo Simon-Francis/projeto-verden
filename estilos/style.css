@@ -139,22 +139,23 @@ ul.lista {
 }
 
 .container-flex {
-    display: flex;
-    align-items: flex-start; /* Alinha o texto pelo topo da imagem */
-    gap: 30px;               /* Espaçamento entre foto e texto */
-    padding: 20px;
-}
+        display: flex;
+        flex-direction: row;      /* Lado a lado */
+        align-items: flex-start;
+        gap: 40px;                /* Um pouco mais de espaço fica melhor em telas grandes */
+        padding: 20px;
+    }
 
-.foto-personagem {
-    width: 350px;            /* Ajuste o tamanho da foto como desejar */
-    height: auto;
-    flex-shrink: 0;          /* Não deixa a imagem esmagar se o texto for grande */
-    border-radius: 10px;
-}
+    .foto-personagem {
+        width: 350px;             /* Tamanho fixo da foto no PC */
+        flex-shrink: 0;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    }
 
-.conteudo-texto {
-    flex: 1;                 /* Faz o texto ocupar o resto da largura */
-}
+    .conteudo-texto {
+        flex: 1;
+    }
 
 
 
@@ -228,6 +229,59 @@ ul.lista {
     #map {
         width: 100% !important;
         margin: 10px 0;
+    }
+}
+
+
+/* --- CONFIGURAÇÃO PARA TELAS GRANDES (Acima de 900px) --- */
+/* Só fica lado a lado em monitores maiores */
+@media (min-width: 901px) {
+    .container-flex {
+        display: flex;
+        flex-direction: row;      /* Lado a lado */
+        align-items: flex-start;
+        gap: 40px;                /* Um pouco mais de espaço fica melhor em telas grandes */
+        padding: 20px;
+    }
+
+    .foto-personagem {
+        width: 350px;             /* Tamanho fixo da foto no PC */
+        flex-shrink: 0;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .conteudo-texto {
+        flex: 1;
+    }
+}
+
+/* --- CONFIGURAÇÃO PARA TELAS ATÉ 900px (Celulares, Tablets e Laptops Pequenos) --- */
+/* Aqui a foto fica em cima e o texto embaixo */
+@media (max-width: 900px) {
+    .container-flex {
+        display: flex;
+        flex-direction: column;   /* Empilha os elementos */
+        align-items: center;      /* Centraliza a imagem horizontalmente */
+        padding: 15px;
+    }
+
+    .foto-personagem {
+        width: 100%;              /* Foto cresce até o limite do container */
+        max-width: 500px;         /* Mas não deixa ficar gigante em tablets */
+        height: auto;
+        margin-bottom: 25px;      /* Espaço entre a foto e o início do texto */
+        border-radius: 10px;
+    }
+
+    .conteudo-texto {
+        width: 100%;
+        text-align: justify;      /* Opcional: deixa o texto alinhado nas laterais */
+    }
+    
+    /* Pequeno ajuste nos parágrafos para não colarem na borda da tela */
+    .conteudo-texto p {
+        margin-bottom: 15px;
     }
 }
 

@@ -32,6 +32,28 @@
 
   </main>
 
+  <script>
+    function clickMenu() {
+    let menu = document.getElementById('itens');
+
+    if (menu.style.display == 'none') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+
+function mudouTamanho() {
+    let menu = document.getElementById('itens');
+    
+    if (window.innerWidth >= 600) {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+  </script>
+  
   <footer>
     <p>Desenvolvido por <strong>Francis Simon</strong>.</p>
   </footer>
