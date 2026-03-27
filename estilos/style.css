@@ -8,12 +8,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Rolagem suave quando clicar nos nomes dos personagens */
 html {
     scroll-behavior: smooth;
 }
 
-/* Fundo com GIF - Camada fixa atrás de tudo */
 #bg-gif {
     position: fixed;
     top: 0;
@@ -84,7 +82,7 @@ main {
 h2, h3, h4 {
     margin: 20px 0;
     text-align: left;
-    color: #F7985D; /* Laranja de destaque */
+    color: #F7985D;
 }
 
 p {
@@ -92,7 +90,7 @@ p {
     text-indent: 30px;
 }
 
-/* --- NOVO: MENU DE PERSONAGENS (ÂNCORAS) --- */
+/* --- MENU DE PERSONAGENS (ÂNCORAS) --- */
 .menu-personagens {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -126,7 +124,6 @@ p {
     transform: translateY(-3px);
 }
 
-/* Divisor entre um personagem e outro */
 .divisor {
     border: 0;
     height: 1px;
@@ -134,15 +131,13 @@ p {
     margin: 50px 0;
 }
 
-/* 4. LAYOUT FLEXÍVEL (PERSONAGENS) */
-
+/* 4. LAYOUT FLEXÍVEL E FOTOS */
 .container-flex {
     display: flex;
     flex-direction: row; 
     align-items: flex-start;
     gap: 40px;
     padding: 10px 0;
-    /* Evita que o topo do personagem fique colado no navegador ao rolar */
     scroll-margin-top: 30px; 
 }
 
@@ -155,17 +150,53 @@ p {
     border: 1px solid rgba(247, 152, 93, 0.3);
 }
 
+/* Wrapper para textos sobre a foto */
+.wrapper-foto {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 .foto-personagem {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 5px;
-    margin-bottom: 15px;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
 }
 
 .morto {
     filter: grayscale(100%);
+}
+
+/* TEXTO CENTRALIZADO (IN MEMORIAM) */
+.texto-centro-foto {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgba(53, 46, 46, 0.4);
+    text-indent: 0 !important;
+    width: auto;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.texto-centro-foto h3 {
+    margin: 0 !important;
+    padding: 0;
+    font-size: 1.6em;
+    color: #ff4d4d;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-weight: bold;
 }
 
 .info-personagem {
@@ -190,7 +221,7 @@ p {
     flex: 1;
 }
 
-/* 5. SEÇÃO DO CALENDÁRIO E MAPAS */
+/* 5. SEÇÃO DO CALENDÁRIO */
 #calendario {
     display: flex;
     flex-wrap: wrap;
@@ -218,7 +249,7 @@ p {
 
 /* 6. RESPONSIVIDADE (MEDIA QUERIES) */
 
-/* Ajuste para TELAS ATÉ 900px */
+/* Ajuste para TABLETS / LAPTOPS PEQUENOS (900px) */
 @media (max-width: 900px) {
     .container-flex {
         flex-direction: column; 
@@ -234,9 +265,17 @@ p {
     header, main {
         width: 90%;
     }
+
+    .texto-centro-foto h3 {
+        font-size: 1.3em;
+        letter-spacing: 2px;
+    }
+    .texto-centro-foto {
+        padding: 15px 25px;
+    }
 }
 
-/* Ajuste para TELAS ATÉ 800px (Celulares) */
+/* Ajuste para CELULARES (800px e abaixo) */
 @media screen and (max-width: 800px) {
     header, main {
         width: 95%;
